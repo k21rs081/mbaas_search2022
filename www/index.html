@@ -34,8 +34,8 @@
                 })
         }
 
-         function searchLevel() {
-            let level =  parseInt($("#level").val());
+        function searchLevel() {
+            let level = parseInt($("#level").val());
             let TestDataClass = ncmb.DataStore(db);
             TestDataClass
                 .equalTo("level", level)
@@ -78,6 +78,8 @@
     <div id="button">
         <button class="btn" onclick="fetchAll()">Fetch All</button>
         <button class="btn" onclick="searchName()">Name</button>
+        <br>
+        <button class="btn" onclick="searchLevelLT()">Level &lt</button>
         <button class="btn" onclick="searchLevel()">Level</button>
     </div>
     <div id="message">message area</div>
