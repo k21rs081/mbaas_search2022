@@ -23,6 +23,17 @@
                 })
         }
 
+        function searchName() {
+            let Name = $("#name").val();
+            let TestDataClass = ncmb.DataStore(db);
+            TestDataClass
+                .equalTo("Name", Name)
+                .fetchAll()
+                .then(function(results) {
+                    showResults(results);
+                })
+        }
+
         function showResults(results) {
             // テーブルのヘッダを生成
             let msg = "<table><tr><th>Name</th><th>No</th><th>level</th><th>HP</th><th>attack</th><th>recovery</th></tr>";
@@ -57,6 +68,7 @@
     </div>
     <div id="button">
         <button class="btn" onclick="fetchAll()">Fetch All</button>
+        <button class="btn" onclick="searchName()">Name</button>
     </div>
     <div id="message">message area</div>
 </body>
