@@ -34,6 +34,29 @@
                 })
         }
 
+        function searchLevelLT() {
+            let level = parseInt($("#level").val());
+            let TestDataClass = ncmb.DataStore(db);
+            TestDataClass
+                .lessThanOrEqualTo("level", level)
+                .fetchAll()
+                .then(function(results) {
+                    showResults(results);
+                })
+        }
+
+
+        function searchLevelGT() {
+            let level = parseInt($("#level").val());
+            let TestDataClass = ncmb.DataStore(db);
+            TestDataClass
+                .greaterThanOrEqualTo("level", level)
+                .fetchAll()
+                .then(function(results) {
+                    showResults(results);
+                })
+        }
+
         function showResults(results) {
             // テーブルのヘッダを生成
             let msg = "<table><tr><th>Name</th><th>No</th><th>level</th><th>HP</th><th>attack</th><th>recovery</th></tr>";
