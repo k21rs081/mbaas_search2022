@@ -32,11 +32,57 @@ input {
   background-color: blue;
 }
 
+.btn2 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 16pt;
+  height: 4ex;
+  width: 5em;
+  border-radius: 10px;
+  color: white;
+  background-color: red;
+}
 #message {
   border-style: solid;
   border-color: grey;
 }
 
+.btn2 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 16pt;
+  height: 4ex;
+  width: 5em;
+  border-radius: 10px;
+  color: white;
+  background-color: red;
+}
+
+.btn3 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 16pt;
+  height: 4ex;
+  width: 5em;
+  border-radius: 10px;
+  color: black;
+  background-color: yellow;
+}
+
+.btn4 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 16pt;
+  height: 4ex;
+  width: 5em;
+  border-radius: 10px;
+  color: white;
+  background-color: green;
+}
+#message {
+  border-style: solid;
+  border-color: grey;
+}
 table {
   border-collapse: collapse;
 }
