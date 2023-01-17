@@ -78,6 +78,17 @@
                     showResults(results);
                 })
         }
+
+         function searchHPno() {
+            let HP = parseInt($("#HP").val());
+            let TestDataClass = ncmb.DataStore(db);
+            TestDataClass
+                .notEqualTo("HP", HP)
+                .fetchAll()
+                .then(function(results) {
+                    showResults(results);
+                })
+        }
         function showResults(results) {
             // テーブルのヘッダを生成
             let msg = "<table><tr><th>Name</th><th>No</th><th>level</th><th>HP</th><th>attack</th><th>recovery</th></tr>";
@@ -114,6 +125,10 @@
         <label for="No">No:</label>
         <input id="No" type="number" placeholder="monster No">
     </div>
+     <div>
+        <label for="HP">HP:</label>
+        <input id="HP" type="number" placeholder="monster HP">
+    </div>
     <div id="button">
         <button class="btn" onclick="fetchAll()">Fetch All</button>
         <button class="btn" onclick="searchName()">Name</button>
@@ -123,6 +138,8 @@
         <br>
         <button class="btn" onclick="searchNoLT()">No &lt=</button>
         <button class="btn" onclick="searchNoGT()">No &gt=</button>
+        <br>
+        <button class="btn" onclick="searchHPno()">HP ×</button>
     </div>
     <div id="message">message area</div>
 </body>
