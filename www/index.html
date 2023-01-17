@@ -57,7 +57,7 @@
                 })
         }
 
-   function searchNoLT() {
+        function searchNoLT() {
             let No = parseInt($("#No").val());
             let TestDataClass = ncmb.DataStore(db);
             TestDataClass
@@ -68,7 +68,7 @@
                 })
         }
 
-          function searchNoGT() {
+        function searchNoGT() {
             let No = parseInt($("#No").val());
             let TestDataClass = ncmb.DataStore(db);
             TestDataClass
@@ -79,7 +79,7 @@
                 })
         }
 
-         function searchHPno() {
+        function searchHPno() {
             let HP = parseInt($("#HP").val());
             let TestDataClass = ncmb.DataStore(db);
             TestDataClass
@@ -89,6 +89,18 @@
                     showResults(results);
                 })
         }
+
+        function searchattackno() {
+            let attack = parseInt($("#attack").val());
+            let TestDataClass = ncmb.DataStore(db);
+            TestDataClass
+                .notEqualTo("attack", attack)
+                .fetchAll()
+                .then(function(results) {
+                    showResults(results);
+                })
+        }
+
         function showResults(results) {
             // テーブルのヘッダを生成
             let msg = "<table><tr><th>Name</th><th>No</th><th>level</th><th>HP</th><th>attack</th><th>recovery</th></tr>";
@@ -121,13 +133,17 @@
         <label for="level">level:</label>
         <input id="level" type="number" placeholder="monster level">
     </div>
-     <div>
+    <div>
         <label for="No">No:</label>
         <input id="No" type="number" placeholder="monster No">
     </div>
-     <div>
+    <div>
         <label for="HP">HP:</label>
         <input id="HP" type="number" placeholder="monster HP">
+    </div>
+    <div>
+        <label for="attack">attack:</label>
+        <input id="attack" type="number" placeholder="monster attack">
     </div>
     <div id="button">
         <button class="btn" onclick="fetchAll()">Fetch All</button>
@@ -140,6 +156,7 @@
         <button class="btn" onclick="searchNoGT()">No &gt=</button>
         <br>
         <button class="btn" onclick="searchHPno()">HP ×</button>
+        <button class="btn" onclick="searchattackno()">attack ×</button>
     </div>
     <div id="message">message area</div>
 </body>
