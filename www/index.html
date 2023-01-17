@@ -101,6 +101,17 @@
                 })
         }
 
+        function searchrecoveryno() {
+            let recovery = parseInt($("#recovery").val());
+            let TestDataClass = ncmb.DataStore(db);
+            TestDataClass
+                .notEqualTo("recovery", recovery)
+                .fetchAll()
+                .then(function(results) {
+                    showResults(results);
+                })
+        }
+
         function showResults(results) {
             // テーブルのヘッダを生成
             let msg = "<table><tr><th>Name</th><th>No</th><th>level</th><th>HP</th><th>attack</th><th>recovery</th></tr>";
@@ -145,6 +156,10 @@
         <label for="attack">attack:</label>
         <input id="attack" type="number" placeholder="monster attack">
     </div>
+    <div>
+        <label for="recovery">recovery:</label>
+        <input id="recovery" type="number" placeholder="monster recovery">
+    </div>
     <div id="button">
         <button class="btn" onclick="fetchAll()">Fetch All</button>
         <button class="btn" onclick="searchName()">Name</button>
@@ -157,6 +172,7 @@
         <br>
         <button class="btn" onclick="searchHPno()">HP ×</button>
         <button class="btn" onclick="searchattackno()">attack ×</button>
+        <button class="btn" onclick="searchrecoveryno()">recovery ×</button>
     </div>
     <div id="message">message area</div>
 </body>
